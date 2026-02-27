@@ -1,0 +1,40 @@
+---
+description: Language-agnostic principles for writing clean, maintainable code
+alwaysApply: true
+---
+
+# Clean Code Principles
+
+## Naming
+- Names should reveal intent and purpose
+- Avoid abbreviations unless universally understood
+- Use consistent naming conventions
+
+## Functions
+- Single responsibility: one function, one job
+- Keep functions small and focused (<60 lines)
+- If a function needs explanation, split it
+
+## Constants & Configuration
+- Replace magic numbers with named constants
+- Store configuration in config files or .env (single source of truth)
+
+## Comments
+- Code should be self-documenting
+- Comment only to explain *why*, never *what*
+- Documentn only non-obvious side effects and complex algorithms
+
+## Structure
+- DRY: extract repeated logic into reusable abstractions
+- Keep related code together
+- Hide implementation details, expose clear interfaces
+- Move nested conditionals into well-named functions
+
+## Anti-patterns to Avoid
+- God classes (>300 lines)
+- Nesting >2 levels deep
+- Hardcoded configuration values
+
+## Maintenance
+- Fix technical debt early
+- Leave code cleaner than you found it
