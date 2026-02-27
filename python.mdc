@@ -23,7 +23,7 @@ globs: "**/*.py"
 - Use `Protocol` for duck typing
 
 ## Documentation
-- Google-style docstrings for public APIs
+- Google-style docstrings for APIs
 
 ## Logging
 - Use loguru for structured logging
@@ -35,12 +35,11 @@ globs: "**/*.py"
 - Handle edge cases explicitly
 
 ## Security
+- Follow OWASP guidelines
 - HTTPS in production
 - Proper CORS configuration
 - Sanitize all user inputs
-- Follow OWASP guidelines
 
 ## Dependencies
 - Pin versions in requirements.txt
-- Regular security audits
 - Follow semantic versioning
