@@ -5,6 +5,9 @@ alwaysApply: true
 
 # Clean Code Principles
 
+## General
+IMPORTANT: Keep the code clean. Less is more. Simple is better than complex. Remove redundancies.
+
 ## Naming
 - Names should reveal intent and purpose
 - Avoid abbreviations unless universally understood
