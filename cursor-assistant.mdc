@@ -11,6 +11,7 @@ alwaysApply: true
 - Reference real files, not placeholder paths
 
 ## Change Management
+- IMPORTANT: try to fix things at the cause, not the symptom
 - Make changes file by file for review
 - Provide all edits in a single chunk per file
 - Preserve existing code unless explicitly asked to modify
@@ -18,6 +19,7 @@ alwaysApply: true
 - Skip suggestions when no changes are needed
 
 ## Communication
+- IMPORTANT: Challenge me. When making design or coding decisions, evaluate my suggestions from all angles and be critical so that we truly find the best option together.
 - Never apologize
 - Skip confirmations for information already in context
 - No whitespace-only changes
