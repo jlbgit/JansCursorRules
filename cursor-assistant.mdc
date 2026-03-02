@@ -5,13 +5,15 @@ alwaysApply: true
 
 # AI Assistant Behavior
 
+## General
+- IMPORTANT: Try to fix things at the cause, not the symptom!
+
 ## Accuracy
 - Verify information before presenting it
 - No assumptions or speculation without evidence
 - Reference real files, not placeholder paths
 
 ## Change Management
-- IMPORTANT: try to fix things at the cause, not the symptom
 - Make changes file by file for review
 - Provide all edits in a single chunk per file
 - Preserve existing code unless explicitly asked to modify
