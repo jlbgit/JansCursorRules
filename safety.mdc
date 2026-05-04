@@ -1,0 +1,45 @@
+---
+description: Never run destructive filesystem or git operations without explicit permission and backup
+alwaysApply: true
+---
+
+# Safety
+
+## Scope Boundary
+Only operate on files inside the current working repository. Paths outside the repo root are off-limits unless explicitly instructed. If a task seems to require writing outside the repo, stop and ask.
+
+## Destructive Operations — Always Confirm First
+
+### Filesystem
+- `rm`, `rm -r`, `rm -rf` on any non-trivial target
+- `find … -delete`, `find … -exec rm`
+- `mv` or `cp` that would overwrite existing files
+- `chmod -R`, `chown -R`
+- Redirecting output (`>`) to an existing file
+- Any shell one-liner chaining destructive ops
+
+### Git
+- `git commit` (including `--amend`), `git push`
+- `git reset` (especially `--hard`)
+- `git rebase`, `git merge`, `git cherry-pick`
+- `git checkout`/`switch` when working tree is dirty
+- `git branch -f`, `git branch -D`, `git tag -f`, `git tag -d`
+- `git clean`, `git stash drop`, `git reflog expire`
+- Any `--force` or `--force-with-lease` flag
+
+## Required Workflow
+
+1. **Inspect** — `ls` the target path or run `git status` / `git diff --stat`.
+2. **Backup** — Always, no exceptions:
+   - Filesystem: `cp file.txt file.txt.bak` or `cp -a dir/ dir.bak/`
+   - Git uncommitted: `git stash push -m "backup before <op>"` or `git diff > /tmp/uncommitted-$(date +%s).patch`
+   - Git branches: `git branch backup/<branch>-$(date +%s)` before reset/rebase
+3. **State intent** — Explain what will run, what will change, and what could be lost.
+4. **Confirm** — Ask and wait for explicit confirmation. Do not proceed on implicit consent.
+5. **Verify** — After the operation, inspect the result (`ls`, `git status`, `git log --oneline -3`).
+
+When confirmed, prefer the least destructive alternative. Never combine multiple destructive ops in one command chain. Mention backup locations in the response.
+
+## Safe Operations (no confirmation needed)
+- Filesystem: `ls`, `find` (no `-delete`), `stat`, `file`, `du`, `wc`, `diff`, `tree`
+- Git: `git status`, `git log`, `git diff`, `git show`, `git ls-files`, `git blame`, `git reflog`

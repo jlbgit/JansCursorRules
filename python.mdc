@@ -8,38 +8,25 @@ globs: "**/*.py"
 ## Project Structure
 - Tests in `tests/` directory
 - Dependencies in `requirements.txt` or `pyproject.toml`
-- Static files in `static/` directory
-- Use virtual environments (usually: `pyenv activate <env_name>`)
+- Use virtual environments (`pyenv activate <env_name>` or `workon <env_name>`)
 
 ## Code Style
 - Black formatting (88 char line length)
 - PEP 8 naming: `snake_case` functions/variables, `PascalCase` classes, `UPPER_CASE` constants
-- Absolute imports over relative imports
+- Absolute imports over relative
 
 ## Type Hints
 - Type all function parameters and return values
 - Use `Optional[Type]` for nullable types
-- Define custom types in `types.py`
 - Use `Protocol` for duck typing
 
 ## Documentation
-- Google-style docstrings for APIs
+- Google-style docstrings for public APIs
 
-## Logging
-- Use loguru for structured logging
-- Never use print statements for application output
-
-## Error Handling
+## Logging & Errors
+- Use loguru for structured logging — never print() for application output
 - Specific try-except blocks (no bare except)
 - Clear, actionable error messages
-- Handle edge cases explicitly
-
-## Security
-- Follow OWASP guidelines
-- HTTPS in production
-- Proper CORS configuration
-- Sanitize all user inputs
 
 ## Dependencies
 - Pin versions in requirements.txt
-- Follow semantic versioning
