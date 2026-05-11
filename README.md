@@ -20,6 +20,7 @@ A curated set of `.mdc` rule files for [Cursor](https://cursor.sh) that shape AI
 | Skill | Purpose |
 |-------|---------|
 | `skills/grill-me/` | Relentless iterative interview that stress-tests a plan before any code is written — an explicit, structured version of "challenge me" |
+| `skills/code-audit/` | Thorough code audit from a senior engineer perspective covering correctness, architecture, performance, security, simplicity, and configurability — produces a prioritized issue report and implementation plan |
 
 ## Philosophy
 
@@ -34,7 +35,7 @@ The remaining guidelines (simplicity first, surgical changes, goal-driven execut
 
 Copy the `.mdc` files you want into your project's `.cursor/rules/` directory, or use this repo as a reference to build your own.
 
-For skills, copy the folder you want into `~/.cursor/skills/` (global) or `.cursor/skills/` (project-scoped). Invoke `grill-me` explicitly by referencing it in chat when you want to think through a plan before writing any code.
+For skills, copy the folder you want into `~/.cursor/skills/` (global) or `.cursor/skills/` (project-scoped). Invoke `grill-me` explicitly by referencing it in chat when you want to think through a plan before writing any code. Invoke `code-audit` when you want a thorough review of a file, module, or full project before making changes.
 
 ## License & Disclaimer
 
