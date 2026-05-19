@@ -40,6 +40,14 @@ Only operate on files inside the current working repository. Paths outside the r
 
 When confirmed, prefer the least destructive alternative. Never combine multiple destructive ops in one command chain. Mention backup locations in the response.
 
+## Dependency & Package Installation
+
+Before installing packages (`pip install`, `npm install`, `uv add`, etc.):
+
+1. **Detect the repo's tooling** — Check for `pyproject.toml` (uv/poetry/hatch), `requirements.txt` (pip), lock files (`uv.lock`, `yarn.lock`, `pnpm-lock.yaml`), `Cargo.toml`, `go.mod`, etc.
+2. **Use the repo's package manager** — Never assume. If the repo uses `uv`, use `uv`. If it uses `pnpm`, use `pnpm`.
+3. **When ambiguous, ask** — If multiple systems coexist or the tooling is unclear, ask before installing.
+
 ## Safe Operations (no confirmation needed)
 - Filesystem: `ls`, `find` (no `-delete`), `stat`, `file`, `du`, `wc`, `diff`, `tree`
 - Git: `git status`, `git log`, `git diff`, `git show`, `git ls-files`, `git blame`, `git reflog`

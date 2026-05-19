@@ -7,8 +7,7 @@ globs: "**/*.py"
 
 ## Project Structure
 - Tests in `tests/` directory
-- Dependencies in `requirements.txt` or `pyproject.toml`
-- Use virtual environments (`pyenv activate <env_name>` or `workon <env_name>`)
+- Detect dependency tooling from repo files (`pyproject.toml`, `requirements.txt`, `uv.lock`, etc.) — never assume pip, uv, poetry, or any specific tool
 
 ## Code Style
 - Black formatting (88 char line length)
@@ -17,16 +16,11 @@ globs: "**/*.py"
 
 ## Type Hints
 - Type all function parameters and return values
-- Use `Optional[Type]` for nullable types
-- Use `Protocol` for duck typing
 
 ## Documentation
 - Google-style docstrings for public APIs
 
 ## Logging & Errors
-- Use loguru for structured logging — never print() for application output
+- Prefer stdlib `logging` over `print()` for application output — adopt the project's existing logger when one is present
 - Specific try-except blocks (no bare except)
 - Clear, actionable error messages
-
-## Dependencies
-- Pin versions in requirements.txt
